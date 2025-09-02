@@ -4,7 +4,7 @@ IMPORT
     Strings, Out, VT100,
     format;
 
-PROCEDURE Pipe*(error, label, description : ARRAY OF CHAR);
+PROCEDURE Pipe*(VAR error : ARRAY OF CHAR; label, description : ARRAY OF CHAR);
 VAR
     newRow : ARRAY 1024 OF CHAR; 
 
