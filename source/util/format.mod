@@ -8,8 +8,8 @@ BEGIN
 
     capacity    := LEN(destination);
 
-    (* just in case, only if it has a non zero capacity *)
-    (* set first character of the array null to reset the string *)
+    (* just in case, only if destination has a non zero capacity *)
+    (* set the first character of the array to null to reset the string *)
     IF (capacity > 0)
     THEN
         destination[0] := 0X;
@@ -28,7 +28,7 @@ BEGIN
     capacity    := LEN(valueStr);
     maximum     := MAX(INTEGER);
 
-    (* iterate through indices of the array from zero *)
+    (* iterate through the indices of the array starting from zero *)
     (* until iteration either reaches null termination in the array *)
     (* or reaches array capacity *)
     (* or reaches integer maximum *)
@@ -56,7 +56,7 @@ BEGIN
     lengthB     := Length(valueStr);
    
     (* iterate through the value string *)
-    (* by halting if it reaches destination capacity *)
+    (* by halting if it ever reaches destination capacity *)
     (* and append characters from value to destination *)
     index := 0; WHILE (index < lengthB) & ((index + lengthA) < capacity)
     DO
@@ -66,7 +66,7 @@ BEGIN
 
     (* if prior iteration ended without reaching capacity *)
     (* then set null after the last appended character *)
-    (* else set last character of destination null *)
+    (* else set last character of destination to null *)
     IF ((index + lengthA) < capacity)
     THEN
         destination[index + lengthA] := 0X;
@@ -86,8 +86,8 @@ BEGIN
     capacity    := LEN(destination);
     length      := Length(destination);
 
-    (* if array still is capable to receive character *)
-    (* then set it after last appended character *)
+    (* if the array is still capable to receive character *)
+    (* then set value character after lastly appended character *)
     (* and set null after it *)
     IF ((length + 1) < capacity)
     THEN
@@ -122,9 +122,9 @@ BEGIN
         valueInt    := -valueInt;
     END;
 
-    (* while value integer has not popped all its digits *)
-    (* firstly get its last digit and convert to character *)
-    (* then append the character to a temporary array*)
+    (* while value integer has not been popped of all its digits *)
+    (* take off its last digit and convert to character firstly *)
+    (* then append the character to a temporary array *)
     index := 0; WHILE (valueInt # 0)
     DO
         digitChar   := CHR(ORD("0") + (valueInt MOD 10));
@@ -142,7 +142,7 @@ BEGIN
     END;
 
     (* iterate through the temporary array in reverse *)
-    (* and sequentially append the stored digit characters *)
+    (* and sequentially append the stored digit characters to destination *)
     WHILE (index > 0)
     DO
         index := index - 1;
