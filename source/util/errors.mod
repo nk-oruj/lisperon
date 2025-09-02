@@ -13,9 +13,9 @@ BEGIN
     (* setup new clear row *)
     format.Clear(newRow);
 
-    (* append escape sequence for dark grey text color *)
+    (* append escape sequence for dark gray text color *)
     format.AppendStr(newRow, VT100.CSI);
-    format.AppendStr(newRow, VT100.DarkGrey);
+    format.AppendStr(newRow, VT100.DarkGray);
 
     (* append the row label with customsized prefix *)
     format.AppendStr(newRow, "> ");
@@ -30,7 +30,7 @@ BEGIN
     format.AppendStr(newRow, description);
     
     (* append the line feed *)
-    format.AppendChr(newRow, CHR("10"));
+    format.AppendChr(newRow, CHR(10));
 
     (* append the new row to the parenting row set *)
     format.AppendStr(error, newRow);
