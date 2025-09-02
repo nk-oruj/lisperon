@@ -14,6 +14,7 @@ BEGIN
     THEN
         destination[0] := 0X;
     END;
+
 END Clear;
 
 PROCEDURE Length*(valueStr : ARRAY OF CHAR) : INTEGER;
