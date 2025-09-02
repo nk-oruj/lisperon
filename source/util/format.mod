@@ -2,7 +2,6 @@ MODULE format;
 
 PROCEDURE Clear*(VAR destination : ARRAY OF CHAR);
 VAR
-
     capacity    : LONGINT;
 
 BEGIN
@@ -15,12 +14,10 @@ BEGIN
     THEN
         destination[0] := 0X;
     END;
-
 END Clear;
 
 PROCEDURE Length*(valueStr : ARRAY OF CHAR) : INTEGER;
 VAR
-
     capacity    : LONGINT;
     maximum     : INTEGER;
     index       : INTEGER;
@@ -46,7 +43,6 @@ END Length;
 
 PROCEDURE AppendStr*(VAR destination : ARRAY OF CHAR; valueStr : ARRAY OF CHAR);
 VAR
-
     capacity    : LONGINT;
     lengthA     : INTEGER;
     lengthB     : INTEGER;
@@ -81,7 +77,6 @@ END AppendStr;
 
 PROCEDURE AppendChr*(VAR destination : ARRAY OF CHAR; valueChr : CHAR);
 VAR
-
     capacity    : LONGINT;
     length      : INTEGER;
 
@@ -103,7 +98,6 @@ END AppendChr;
 
 PROCEDURE AppendInt*(VAR destination : ARRAY OF CHAR; valueInt : INTEGER);
 VAR
-  
     index, length   : INTEGER;
     digitChar       : CHAR;
     negative        : BOOLEAN;
