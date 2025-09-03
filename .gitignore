@@ -3,6 +3,3 @@
 *.o
 *.sym
 main
-examples/main
-examples/*.mod
-braineron
