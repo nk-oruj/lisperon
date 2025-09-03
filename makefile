@@ -20,11 +20,9 @@ build-modules:
 build-target:
 	voc source/main.mod -m
 
-delete:
+clean:
 	@for file in $(output_files); do \
 		rm -f "$$file"; \
 		echo "Deleted file: $$file"; \
 	done
 
-test-build:
-	./braineron test.bf test.mod && voc test.mod -m
